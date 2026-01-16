@@ -1,0 +1,190 @@
+[gd_scene load_steps=21 format=3 uid="uid://b8g8r84gyteaj"]
+
+[ext_resource type="Texture2D" uid="uid://bqalt08ywns1j" path="res://Assets/Original/door-animation.png" id="1_kqg2w"]
+[ext_resource type="Script" uid="uid://xlp5wh1oecm" path="res://Scripts/next_level.gd" id="1_mq6pl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mq6pl"]
+atlas = ExtResource("1_kqg2w")
+region = Rect2(80, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8tnjg"]
+atlas = ExtResource("1_kqg2w")
+region = Rect2(64, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vxfej"]
+atlas = ExtResource("1_kqg2w")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uousb"]
+atlas = ExtResource("1_kqg2w")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a2gg4"]
+atlas = ExtResource("1_kqg2w")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_csoak"]
+atlas = ExtResource("1_kqg2w")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ohtcw"]
+atlas = ExtResource("1_kqg2w")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6kyo"]
+atlas = ExtResource("1_kqg2w")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r61vj"]
+atlas = ExtResource("1_kqg2w")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgr17"]
+atlas = ExtResource("1_kqg2w")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kmmgf"]
+atlas = ExtResource("1_kqg2w")
+region = Rect2(64, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cuycr"]
+atlas = ExtResource("1_kqg2w")
+region = Rect2(80, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k3334"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mq6pl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8tnjg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vxfej")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uousb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a2gg4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_csoak")
+}],
+"loop": false,
+"name": &"close",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ohtcw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c6kyo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r61vj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cgr17")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kmmgf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cuycr")
+}],
+"loop": false,
+"name": &"open",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_08nvk"]
+size = Vector2(12, 24)
+
+[sub_resource type="Animation" id="Animation_mq6pl"]
+resource_name = "face_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_8tnjg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_vxfej"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uousb"]
+_data = {
+&"RESET": SubResource("Animation_8tnjg"),
+&"fade_in": SubResource("Animation_vxfej"),
+&"fade_out": SubResource("Animation_mq6pl")
+}
+
+[node name="NextLevel" type="Area2D" groups=["next_level"]]
+script = ExtResource("1_mq6pl")
+
+[node name="Door_Sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -15)
+sprite_frames = SubResource("SpriteFrames_k3334")
+animation = &"close"
+autoplay = "close"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -12)
+shape = SubResource("RectangleShape2D_08nvk")
+
+[node name="level_fade" type="ColorRect" parent="."]
+visible = false
+z_index = 5
+offset_left = -531.0
+offset_top = -283.0
+offset_right = 530.0
+offset_bottom = 277.0
+color = Color(0, 0, 0, 1)
+
+[node name="level_fade_animation" type="AnimationPlayer" parent="level_fade"]
+libraries = {
+&"": SubResource("AnimationLibrary_uousb")
+}
+
+[node name="next_level_timer" type="Timer" parent="."]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="timeout" from="next_level_timer" to="." method="_on_next_level_timer_timeout"]
