@@ -6,6 +6,8 @@ const JUMP_VELOCITY = -250.0
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var timer: Timer = $detect_enemy/Timer
+@onready var walking_sound: AudioStreamPlayer2D = $walking
+@onready var jumping_sound: AudioStreamPlayer2D = $jumping
 
 func _on_ready() -> void:
 	GlobalVar.isDead = false
@@ -18,12 +20,16 @@ func _physics_process(delta: float) -> void:
 		
 	#disable movement if dead
 	if GlobalVar.isDead:
+		velocity.x = 0
+		velocity.y = 0
 		move_and_slide()
 		return
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		jumping_sound.play()
+		
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -41,10 +47,14 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		if direction == 0:
 			animated_sprite.play("idle")
+			walking_sound.stop()
 		else:
 			animated_sprite.play("run")
+			if not walking_sound.playing:
+				walking_sound.play()
 	else:
 		animated_sprite.play("jump")
+		
 
 
 	move_and_slide()
@@ -53,10 +63,11 @@ func _physics_process(delta: float) -> void:
 func _on_detect_enemy_area_entered(area: Area2D) -> void:
 	if area.is_in_group("enemy") or area.is_in_group("enemy_2"):
 		GlobalVar.isDead = true
+		MusicManager.play_player_death_sfx()
+		animated_sprite.play("die")
 		print("collided")
 		Engine.time_scale = 0.5
 		timer.start()
-	
 
 func _on_timer_timeout() -> void:
 	Engine.time_scale = 1

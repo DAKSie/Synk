@@ -3,10 +3,7 @@
 [ext_resource type="Script" uid="uid://bgn6enkub33yh" path="res://Scripts/key.gd" id="1_bq4no"]
 [ext_resource type="Texture2D" uid="uid://c1bd5oyaor0xc" path="res://Assets/Original/key-animation.png" id="1_on4dc"]
 [ext_resource type="Texture2D" uid="uid://bf0w7sevx42hy" path="res://Assets/Tilemap/monochrome_tilemap_transparent.png" id="2_bq4no"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xpn81"]
-atlas = ExtResource("1_on4dc")
-region = Rect2(0, 0, 32, 32)
+[ext_resource type="AudioStream" uid="uid://66jlego1a0wq" path="res://Assets/music/sfx/retro-explode.mp3" id="4_xpn81"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wbu1d"]
 atlas = ExtResource("1_on4dc")
@@ -40,9 +37,6 @@ region = Rect2(64, 0, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xpn81")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_wbu1d")
 }, {
 "duration": 1.0,
@@ -56,7 +50,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"collect",
-"speed": 10.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -84,8 +78,10 @@ script = ExtResource("1_bq4no")
 
 [node name="key_sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_a2dbh")
-animation = &"idle"
+animation = &"collect"
 autoplay = "idle"
+frame = 3
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)
@@ -93,6 +89,9 @@ shape = SubResource("RectangleShape2D_34se2")
 
 [node name="key_anim_timer" type="Timer" parent="."]
 wait_time = 0.25
+
+[node name="key_explode_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_xpn81")
 
 [connection signal="area_entered" from="." to="." method="_player_collected_key"]
 [connection signal="timeout" from="key_anim_timer" to="." method="_on_key_anim_timer_timeout"]

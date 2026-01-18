@@ -600,7 +600,7 @@ format = 2
 layer_0/tile_data = PackedInt32Array(327689, 720896, 8, 262154, 851968, 5, 327690, 786432, 7, 327688, 720896, 8, 327687, 655360, 7, 262151, 851968, 5, 524288, 720896, 5, 524289, 720896, 5, 524290, 720896, 5, 524291, 720896, 5, 524292, 720896, 5, 524293, 720896, 5, 524294, 720896, 5, 524295, 720896, 5, 524296, 720896, 5, 524297, 720896, 5, 524298, 720896, 5, 524299, 720896, 5, 524300, 720896, 5, 524301, 720896, 5, 524302, 720896, 5, 524303, 720896, 5, 524304, 720896, 5, 524305, 720896, 5)
 
 [node name="NextLevel" parent="." instance=ExtResource("2_yy6i0")]
-position = Vector2(145, 128)
+position = Vector2(280, 128)
 
 [node name="Enemy" parent="." instance=ExtResource("3_167vu")]
 position = Vector2(129, 126)
@@ -612,4 +612,4 @@ position = Vector2(163, 126)
 position = Vector2(144, 80)
 
 [node name="Key" parent="." instance=ExtResource("6_yy6i0")]
-position = Vector2(179, 122)
+position = Vector2(144, 120)

@@ -83,7 +83,7 @@ radius = 4.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_4gdgy"]
 radius = 5.0
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="Enemy 2" type="CharacterBody2D"]
 script = ExtResource("1_527ua")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

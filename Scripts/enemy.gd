@@ -6,8 +6,6 @@ const JUMP_VELOCITY = -250.0
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
-
-
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
@@ -15,6 +13,8 @@ func _physics_process(delta: float) -> void:
 		
 	#disable movement if dead
 	if GlobalVar.isDead:
+		velocity.x = 0
+		velocity.y = 0
 		move_and_slide()
 		return
 
@@ -50,5 +50,6 @@ func _physics_process(delta: float) -> void:
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("enemy_2"):
-		print("it died bro")
+		MusicManager.play_death_enemy_sfx()
+		print("enemy_2 dead")
 		queue_free()

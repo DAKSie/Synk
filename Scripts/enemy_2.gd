@@ -17,6 +17,8 @@ func _physics_process(delta: float) -> void:
 		
 	#disable movement if dead
 	if GlobalVar.isDead:
+		velocity.x = 0
+		velocity.y = 0
 		move_and_slide()
 		return
 
@@ -47,5 +49,6 @@ func _physics_process(delta: float) -> void:
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("enemy"):
+		MusicManager.play_death_enemy_sfx()
 		print("it works bro")
 		queue_free()

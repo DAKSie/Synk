@@ -19,10 +19,25 @@ config/icon="res://icon.svg"
 
 GlobalVar="*res://Scripts/globalVariables.gd"
 NextLevel="*res://Scripts/next_level.gd"
+MainMenu="*res://Scenes/main_menu.tscn"
+MusicManager="*res://Scripts/MusicManager.gd"
+
+[display]
+
+window/size/resizable=false
+window/stretch/mode="canvas_items"
+window/vsync/vsync_mode=0
 
 [dotnet]
 
 project/assembly_name="SynK"
+
+[file_customization]
+
+folder_colors={
+"res://Scenes/": "red",
+"res://Scenes/Levels/": "orange"
+}
 
 [global_group]
 
