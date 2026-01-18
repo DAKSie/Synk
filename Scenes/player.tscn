@@ -285,9 +285,11 @@ shape = SubResource("CircleShape2D_cvnsp")
 
 [node name="walking" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_6t5aa")
+bus = &"SFX"
 
 [node name="jumping" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_vgqql")
+bus = &"SFX"
 
 [connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="area_entered" from="detect_enemy" to="." method="_on_detect_enemy_area_entered"]

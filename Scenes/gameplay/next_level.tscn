@@ -187,6 +187,7 @@ libraries = {
 
 [node name="door_entered" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_8tnjg")
+bus = &"SFX"
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

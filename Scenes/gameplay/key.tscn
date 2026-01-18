@@ -92,6 +92,7 @@ wait_time = 0.25
 
 [node name="key_explode_sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_xpn81")
+bus = &"SFX"
 
 [connection signal="area_entered" from="." to="." method="_player_collected_key"]
 [connection signal="timeout" from="key_anim_timer" to="." method="_on_key_anim_timer_timeout"]

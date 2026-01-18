@@ -7,6 +7,8 @@ var button_type = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	fade_in_out.show()
+	animation_player.play("fade_out")
 	MusicManager.play_main_menu_music()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -20,7 +22,7 @@ func _on_start_pressed() -> void:
 	animation_player.play("fade_in")
 
 func _on_options_pressed() -> void:
-	button_type = "option"
+	button_type = "options"
 	fade_in_out.show()
 	timer.start()
 	animation_player.play("fade_in")
