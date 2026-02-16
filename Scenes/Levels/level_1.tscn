@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c5b822yk55dk0"]
+[gd_scene load_steps=14 format=3 uid="uid://c5b822yk55dk0"]
 
 [ext_resource type="PackedScene" uid="uid://d3jotadblnfxy" path="res://Scenes/player.tscn" id="1_cyadu"]
 [ext_resource type="Script" uid="uid://b08b3obrmp5t0" path="res://Scripts/Levels/level_1.gd" id="1_xgxfi"]
@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://buchijmd1hyyk" path="res://Assets/Fonts/Ithaca-LVB75.ttf" id="5_rb0md"]
 [ext_resource type="PackedScene" uid="uid://b8g8r84gyteaj" path="res://Scenes/gameplay/next_level.tscn" id="7_5f3p6"]
 [ext_resource type="PackedScene" uid="uid://bqff8g2jk1rvb" path="res://Scenes/gameplay/key.tscn" id="8_jv26f"]
+[ext_resource type="PackedScene" uid="uid://bxknisnpioayj" path="res://Scenes/UI/pause_menu.tscn" id="8_rb0md"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5f3p6"]
 texture = ExtResource("2_xgxfi")
@@ -553,6 +554,11 @@ normal = Vector2(-1, 0)
 
 [node name="Level 1" type="Node2D"]
 script = ExtResource("1_xgxfi")
+
+[node name="Pause_screen" type="CanvasLayer" parent="."]
+
+[node name="Pause_menu" parent="Pause_screen" instance=ExtResource("8_rb0md")]
+z_index = 100
 
 [node name="Environment" type="TileMap" parent="."]
 z_index = 1

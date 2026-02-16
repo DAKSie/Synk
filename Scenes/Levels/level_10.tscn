@@ -1,25 +1,25 @@
-[gd_scene load_steps=14 format=3 uid="uid://cms5aofiufpa"]
+[gd_scene load_steps=15 format=3 uid="uid://cwoj600pnhfce"]
 
-[ext_resource type="FontFile" uid="uid://buchijmd1hyyk" path="res://Assets/Fonts/Ithaca-LVB75.ttf" id="1_167vu"]
-[ext_resource type="Texture2D" uid="uid://bthiwsoqifa5x" path="res://Assets/Tilemap/monochrome_tilemap_transparent_packed.png" id="1_rc141"]
-[ext_resource type="PackedScene" uid="uid://bxknisnpioayj" path="res://Scenes/UI/pause_menu.tscn" id="1_x1k1j"]
-[ext_resource type="PackedScene" uid="uid://b8g8r84gyteaj" path="res://Scenes/gameplay/next_level.tscn" id="2_yy6i0"]
-[ext_resource type="PackedScene" uid="uid://d2x55tqql4wb" path="res://Scenes/enemy.tscn" id="3_167vu"]
-[ext_resource type="PackedScene" uid="uid://bllgx4qt8opkt" path="res://Scenes/enemy_2.tscn" id="4_x1k1j"]
-[ext_resource type="PackedScene" uid="uid://d3jotadblnfxy" path="res://Scenes/player.tscn" id="5_4ahh4"]
-[ext_resource type="PackedScene" uid="uid://bqff8g2jk1rvb" path="res://Scenes/gameplay/key.tscn" id="6_yy6i0"]
+[ext_resource type="PackedScene" uid="uid://bxknisnpioayj" path="res://Scenes/UI/pause_menu.tscn" id="1_2fy10"]
+[ext_resource type="Texture2D" uid="uid://bthiwsoqifa5x" path="res://Assets/Tilemap/monochrome_tilemap_transparent_packed.png" id="2_l0dhx"]
+[ext_resource type="PackedScene" uid="uid://d3jotadblnfxy" path="res://Scenes/player.tscn" id="3_p60k7"]
+[ext_resource type="PackedScene" uid="uid://b8g8r84gyteaj" path="res://Scenes/gameplay/next_level.tscn" id="4_bla2a"]
+[ext_resource type="PackedScene" uid="uid://bqff8g2jk1rvb" path="res://Scenes/gameplay/key.tscn" id="5_du3l2"]
+[ext_resource type="PackedScene" uid="uid://bllgx4qt8opkt" path="res://Scenes/enemy_2.tscn" id="6_mucg7"]
+[ext_resource type="PackedScene" uid="uid://d2x55tqql4wb" path="res://Scenes/enemy.tscn" id="7_tdopa"]
+[ext_resource type="PackedScene" uid="uid://vhg73ttkkyt1" path="res://Scenes/kill_zone.tscn" id="8_lwuu2"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_m5u8k"]
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_00o8d"]
 normal = Vector2(1, 0)
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4t2i6"]
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_2khew"]
 normal = Vector2(0, 1)
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rbdd2"]
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_xab48"]
 normal = Vector2(-1, 0)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dtivw"]
-texture = ExtResource("1_rc141")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qoxtb"]
+texture = ExtResource("2_l0dhx")
 1:0/0 = 0
 2:0/0 = 0
 3:0/0 = 0
@@ -284,9 +284,13 @@ texture = ExtResource("1_rc141")
 8:9/0 = 0
 9:9/0 = 0
 10:9/0 = 0
+10:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 11:9/0 = 0
+11:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 12:9/0 = 0
+12:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 13:9/0 = 0
+13:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:9/0 = 0
 15:9/0 = 0
 15:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -308,9 +312,12 @@ texture = ExtResource("1_rc141")
 8:10/0 = 0
 9:10/0 = 0
 10:10/0 = 0
+10:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 11:10/0 = 0
 12:10/0 = 0
+12:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 13:10/0 = 0
+13:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:10/0 = 0
 15:10/0 = 0
 15:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -332,9 +339,13 @@ texture = ExtResource("1_rc141")
 8:11/0 = 0
 9:11/0 = 0
 10:11/0 = 0
+10:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 11:11/0 = 0
+11:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 12:11/0 = 0
+12:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 13:11/0 = 0
+13:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:11/0 = 0
 15:11/0 = 0
 15:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -356,9 +367,13 @@ texture = ExtResource("1_rc141")
 8:12/0 = 0
 9:12/0 = 0
 10:12/0 = 0
+10:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 11:12/0 = 0
+11:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 12:12/0 = 0
+12:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 13:12/0 = 0
+13:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:12/0 = 0
 15:12/0 = 0
 15:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -380,9 +395,13 @@ texture = ExtResource("1_rc141")
 8:13/0 = 0
 9:13/0 = 0
 10:13/0 = 0
+10:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 11:13/0 = 0
+11:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 12:13/0 = 0
+12:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 13:13/0 = 0
+13:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:13/0 = 0
 15:13/0 = 0
 15:13/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -404,9 +423,12 @@ texture = ExtResource("1_rc141")
 8:14/0 = 0
 9:14/0 = 0
 10:14/0 = 0
+10:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 11:14/0 = 0
 12:14/0 = 0
+12:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 13:14/0 = 0
+13:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:14/0 = 0
 15:14/0 = 0
 15:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -427,9 +449,13 @@ texture = ExtResource("1_rc141")
 8:15/0 = 0
 9:15/0 = 0
 10:15/0 = 0
+10:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 11:15/0 = 0
+11:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 12:15/0 = 0
+12:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 13:15/0 = 0
+13:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:15/0 = 0
 15:15/0 = 0
 15:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -451,9 +477,13 @@ texture = ExtResource("1_rc141")
 8:16/0 = 0
 9:16/0 = 0
 10:16/0 = 0
+10:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 11:16/0 = 0
+11:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 12:16/0 = 0
+12:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 13:16/0 = 0
+13:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:16/0 = 0
 15:16/0 = 0
 15:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -548,74 +578,72 @@ texture = ExtResource("1_rc141")
 19:19/0 = 0
 19:19/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
-[sub_resource type="TileSet" id="TileSet_52ew1"]
+[sub_resource type="TileSet" id="TileSet_a2hlh"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_dtivw")
+sources/0 = SubResource("TileSetAtlasSource_qoxtb")
 
-[node name="Level 3" type="Node2D"]
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5l77v"]
+
+[node name="Level 6" type="Node2D"]
 
 [node name="Pause_screen" type="CanvasLayer" parent="."]
 
-[node name="Pause_menu" parent="Pause_screen" instance=ExtResource("1_x1k1j")]
+[node name="Pause_menu" parent="Pause_screen" instance=ExtResource("1_2fy10")]
 z_index = 100
 
 [node name="Background" type="ColorRect" parent="."]
-offset_right = 292.0
-offset_bottom = 165.0
+offset_right = 304.0
+offset_bottom = 171.0
 color = Color(0, 0, 0, 1)
-
-[node name="Label" type="Label" parent="Background"]
-layout_mode = 0
-offset_left = 25.0
-offset_top = 22.0
-offset_right = 266.0
-offset_bottom = 40.0
-theme_override_fonts/font = ExtResource("1_167vu")
-theme_override_font_sizes/font_size = 16
-text = "When green and red enemies touch they die."
-horizontal_alignment = 1
-autowrap_mode = 3
-clip_text = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
-zoom = Vector2(4, 4)
+zoom = Vector2(3.79, 3.79)
 
 [node name="worldBorder" type="Node" parent="."]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="worldBorder"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="worldBorder/StaticBody2D"]
-shape = SubResource("WorldBoundaryShape2D_m5u8k")
+shape = SubResource("WorldBoundaryShape2D_00o8d")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="worldBorder"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="worldBorder/StaticBody2D2"]
-shape = SubResource("WorldBoundaryShape2D_4t2i6")
+shape = SubResource("WorldBoundaryShape2D_2khew")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="worldBorder"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="worldBorder/StaticBody2D3"]
-position = Vector2(288, 0)
-shape = SubResource("WorldBoundaryShape2D_rbdd2")
+position = Vector2(304, 0)
+shape = SubResource("WorldBoundaryShape2D_xab48")
 
 [node name="Environment" type="TileMap" parent="."]
 z_index = 1
-tile_set = SubResource("TileSet_52ew1")
+tile_set = SubResource("TileSet_a2hlh")
 format = 2
-layer_0/tile_data = PackedInt32Array(327689, 720896, 8, 262154, 851968, 5, 327690, 786432, 7, 327688, 720896, 8, 327687, 655360, 7, 262151, 851968, 5, 524288, 720896, 5, 524289, 720896, 5, 524290, 720896, 5, 524291, 720896, 5, 524292, 720896, 5, 524293, 720896, 5, 524294, 720896, 5, 524295, 720896, 5, 524296, 720896, 5, 524297, 720896, 5, 524298, 720896, 5, 524299, 720896, 5, 524300, 720896, 5, 524301, 720896, 5, 524302, 720896, 5, 524303, 720896, 5, 524304, 720896, 5, 524305, 720896, 5)
+layer_0/tile_data = PackedInt32Array(9, 851968, 6, 65545, 851968, 6, 131081, 851968, 6, 196617, 851968, 6, 262153, 851968, 6, 327689, 851968, 6, 393225, 851968, 6, 458761, 851968, 6, 524297, 851968, 6, 589833, 851968, 6, 655369, 851968, 6, 655375, 786432, 5, 655363, 655360, 5, 655364, 720896, 5, 655365, 720896, 5, 655366, 720896, 5, 655367, 720896, 5, 655368, 720896, 5, 655370, 720896, 5, 655371, 720896, 5, 655372, 720896, 5, 655373, 720896, 5, 655374, 720896, 5, 524298, 327680, 4, 524299, 393216, 4, 524289, 393216, 4, 524288, 327680, 4, 524306, 327680, 4, 524305, 262144, 4, 327694, 851968, 8)
 
-[node name="NextLevel" parent="." instance=ExtResource("2_yy6i0")]
-position = Vector2(280, 128)
+[node name="KillZone" parent="." instance=ExtResource("8_lwuu2")]
+position = Vector2(139, 187)
 
-[node name="Enemy" parent="." instance=ExtResource("3_167vu")]
-position = Vector2(129, 126)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
+shape = SubResource("WorldBoundaryShape2D_5l77v")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("4_x1k1j")]
-position = Vector2(163, 126)
+[node name="Enemy" parent="." instance=ExtResource("7_tdopa")]
+position = Vector2(88, 161)
 
-[node name="Player" parent="." instance=ExtResource("5_4ahh4")]
-position = Vector2(144, 80)
+[node name="Enemy 2" parent="." instance=ExtResource("6_mucg7")]
+position = Vector2(232, 81)
 
-[node name="Key" parent="." instance=ExtResource("6_yy6i0")]
-position = Vector2(144, 120)
+[node name="Key" parent="." instance=ExtResource("5_du3l2")]
+position = Vector2(176, 120)
+
+[node name="Player" parent="." instance=ExtResource("3_p60k7")]
+position = Vector2(246, 160)
+
+[node name="Player2" parent="." instance=ExtResource("3_p60k7")]
+position = Vector2(118, 160)
+
+[node name="NextLevel" parent="." instance=ExtResource("4_bla2a")]
+position = Vector2(135, 160)
