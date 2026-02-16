@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b8g8r84gyteaj" path="res://Scenes/gameplay/next_level.tscn" id="3_qhxxe"]
 [ext_resource type="PackedScene" uid="uid://bqff8g2jk1rvb" path="res://Scenes/gameplay/key.tscn" id="4_0h4al"]
 [ext_resource type="PackedScene" uid="uid://bllgx4qt8opkt" path="res://Scenes/enemy_2.tscn" id="5_gb6nk"]
+[ext_resource type="PackedScene" uid="uid://bqff8g2jk1rvb" path="res://Scenes/gameplay/key.tscn" id="5_ow8w2"]
 [ext_resource type="PackedScene" uid="uid://d2x55tqql4wb" path="res://Scenes/enemy.tscn" id="6_7se1c"]
 [ext_resource type="PackedScene" uid="uid://vhg73ttkkyt1" path="res://Scenes/kill_zone.tscn" id="7_ow8w2"]
 
