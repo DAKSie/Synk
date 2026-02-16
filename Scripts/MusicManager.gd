@@ -4,6 +4,7 @@ var main_menu_music: AudioStreamPlayer2D
 var level_music: AudioStreamPlayer2D
 var enemy_death_sfx: AudioStreamPlayer2D
 var player_death: AudioStreamPlayer2D
+var scary_sounds: AudioStreamPlayer2D
 
 func _ready() -> void:
 	#-----------------------------------Main Menu music player
@@ -54,6 +55,17 @@ func _ready() -> void:
 		print("ERROR music load")
 	player_death.stream = player_death_stream
 	
+	#scary sounds
+	scary_sounds = AudioStreamPlayer2D.new()
+	add_child(scary_sounds)
+	var scary_sounds_stream = load("res://Assets/music/sfx/scary sounds_mixdown.wav")
+	if scary_sounds_stream:
+		scary_sounds.stream = scary_sounds_stream
+		print("Scary sounds loaded" + str(scary_sounds))
+	else:
+		print("Error loading scary sounds")
+	scary_sounds.stream = scary_sounds_stream
+	
 
 #Music player endpoints
 
@@ -79,6 +91,9 @@ func stop_level_music():
 func stop_all_music():
 	stop_main_menu_music()
 	
+func play_scary_sounds():
+	if scary_sounds and scary_sounds.stream and not scary_sounds.playing:
+		scary_sounds.play()
 #-----------------------SFX
 # enemy
 func play_death_enemy_sfx():
@@ -90,3 +105,5 @@ func play_death_enemy_sfx():
 func play_player_death_sfx():
 	if player_death and player_death.stream and not player_death.playing:
 		player_death.play()
+
+#Scary sounds
