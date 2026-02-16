@@ -47,6 +47,7 @@ enemy=""
 enemy_2=""
 key=""
 next_level=""
+guard="stationary enemy"
 
 [input]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://c82466qfd02xx"]
 
-[ext_resource type="Script" uid="uid://crt2qpcrxhpwj" path="res://Scenes/guard.gd" id="1_nxfph"]
+[ext_resource type="Script" uid="uid://crt2qpcrxhpwj" path="res://Scripts/guard.gd" id="1_nxfph"]
 [ext_resource type="Texture2D" uid="uid://bthiwsoqifa5x" path="res://Assets/Tilemap/monochrome_tilemap_transparent_packed.png" id="2_n83sx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1f0kj"]
@@ -83,7 +83,7 @@ radius = 4.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_4gdgy"]
 radius = 5.0
 
-[node name="Enemy 2" type="CharacterBody2D"]
+[node name="guard" type="CharacterBody2D" groups=["guard"]]
 script = ExtResource("1_nxfph")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

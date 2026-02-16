@@ -43,13 +43,10 @@ func _physics_process(delta: float) -> void:
 	else:
 		animated_sprite.play("jump")
 
-
-
 	move_and_slide()
 
-
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	if area.is_in_group("enemy_2"):
+	if area.is_in_group("enemy_2") or area.is_in_group("guard"):
 		MusicManager.play_death_enemy_sfx()
 		print("enemy_2 dead")
 		queue_free()
