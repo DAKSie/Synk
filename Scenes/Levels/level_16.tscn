@@ -1,24 +1,26 @@
-[gd_scene load_steps=13 format=3 uid="uid://cmtxa61rrwjn2"]
+[gd_scene load_steps=16 format=3 uid="uid://bgy0tewmbjbri"]
 
-[ext_resource type="Script" uid="uid://deio7j6dqa0xu" path="res://Scripts/Levels/level_7.gd" id="1_3exby"]
-[ext_resource type="PackedScene" uid="uid://bxknisnpioayj" path="res://Scenes/UI/pause_menu.tscn" id="2_oxtm3"]
-[ext_resource type="Texture2D" uid="uid://bthiwsoqifa5x" path="res://Assets/Tilemap/monochrome_tilemap_transparent_packed.png" id="3_8sjl4"]
-[ext_resource type="PackedScene" uid="uid://d2x55tqql4wb" path="res://Scenes/enemy.tscn" id="4_4xbbr"]
-[ext_resource type="PackedScene" uid="uid://bllgx4qt8opkt" path="res://Scenes/enemy_2.tscn" id="5_iaj1q"]
-[ext_resource type="PackedScene" uid="uid://d3jotadblnfxy" path="res://Scenes/player.tscn" id="6_ux7fy"]
-[ext_resource type="FontFile" uid="uid://buchijmd1hyyk" path="res://Assets/Fonts/Ithaca-LVB75.ttf" id="7_wo14r"]
+[ext_resource type="Script" uid="uid://ceue3xvk6d388" path="res://Scripts/Levels/level_14.gd" id="1_cgl0a"]
+[ext_resource type="Texture2D" uid="uid://bthiwsoqifa5x" path="res://Assets/Tilemap/monochrome_tilemap_transparent_packed.png" id="2_f7boj"]
+[ext_resource type="PackedScene" uid="uid://d3jotadblnfxy" path="res://Scenes/player.tscn" id="3_a5g8x"]
+[ext_resource type="PackedScene" uid="uid://b8g8r84gyteaj" path="res://Scenes/gameplay/next_level.tscn" id="4_dumvq"]
+[ext_resource type="PackedScene" uid="uid://bqff8g2jk1rvb" path="res://Scenes/gameplay/key.tscn" id="5_bhjjb"]
+[ext_resource type="PackedScene" uid="uid://d2x55tqql4wb" path="res://Scenes/enemy.tscn" id="6_4dral"]
+[ext_resource type="PackedScene" uid="uid://bllgx4qt8opkt" path="res://Scenes/enemy_2.tscn" id="7_leaj6"]
+[ext_resource type="PackedScene" uid="uid://vhg73ttkkyt1" path="res://Scenes/kill_zone.tscn" id="8_emo7j"]
+[ext_resource type="PackedScene" uid="uid://bxknisnpioayj" path="res://Scenes/UI/pause_menu.tscn" id="9_4vvgi"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_nlhb4"]
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bm7ey"]
 normal = Vector2(1, 0)
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_sydce"]
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_81mv6"]
 normal = Vector2(0, 1)
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uhw5r"]
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5nk8a"]
 normal = Vector2(-1, 0)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aisj1"]
-texture = ExtResource("3_8sjl4")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c2hdk"]
+texture = ExtResource("2_f7boj")
 1:0/0 = 0
 2:0/0 = 0
 3:0/0 = 0
@@ -166,7 +168,7 @@ texture = ExtResource("3_8sjl4")
 10:5/0 = 0
 10:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 11:5/0 = 0
-11:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+11:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -2.877739, -8, -3.057598)
 12:5/0 = 0
 12:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 13:5/0 = 0
@@ -228,8 +230,6 @@ texture = ExtResource("3_8sjl4")
 9:7/0 = 0
 10:7/0 = 0
 10:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-11:7/0 = 0
-11:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 12:7/0 = 0
 12:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 13:7/0 = 0
@@ -256,8 +256,6 @@ texture = ExtResource("3_8sjl4")
 9:8/0 = 0
 10:8/0 = 0
 10:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-11:8/0 = 0
-11:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 12:8/0 = 0
 12:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 13:8/0 = 0
@@ -576,23 +574,24 @@ texture = ExtResource("3_8sjl4")
 18:19/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 19:19/0 = 0
 19:19/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+11:7/0 = 0
+11:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+11:8/0 = 0
+11:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
-[sub_resource type="TileSet" id="TileSet_vvdlf"]
+[sub_resource type="TileSet" id="TileSet_uk5f4"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_aisj1")
+sources/0 = SubResource("TileSetAtlasSource_c2hdk")
 
-[node name="Level 7" type="Node2D"]
-script = ExtResource("1_3exby")
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_56klp"]
 
-[node name="Pause_screen" type="CanvasLayer" parent="."]
-
-[node name="Pause_menu" parent="Pause_screen" instance=ExtResource("2_oxtm3")]
-z_index = 100
+[node name="level_17" type="Node2D"]
 
 [node name="Background" type="ColorRect" parent="."]
 offset_right = 292.0
 offset_bottom = 165.0
 color = Color(0, 0, 0, 1)
+script = ExtResource("1_cgl0a")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
@@ -603,55 +602,47 @@ zoom = Vector2(4, 4)
 [node name="StaticBody2D" type="StaticBody2D" parent="worldBorder"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="worldBorder/StaticBody2D"]
-shape = SubResource("WorldBoundaryShape2D_nlhb4")
+shape = SubResource("WorldBoundaryShape2D_bm7ey")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="worldBorder"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="worldBorder/StaticBody2D2"]
-shape = SubResource("WorldBoundaryShape2D_sydce")
+shape = SubResource("WorldBoundaryShape2D_81mv6")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="worldBorder"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="worldBorder/StaticBody2D3"]
 position = Vector2(288, 0)
-shape = SubResource("WorldBoundaryShape2D_uhw5r")
+shape = SubResource("WorldBoundaryShape2D_5nk8a")
 
 [node name="Environment" type="TileMap" parent="."]
 z_index = 1
-tile_set = SubResource("TileSet_vvdlf")
+tile_set = SubResource("TileSet_uk5f4")
 format = 2
-layer_0/tile_data = PackedInt32Array(393220, 851968, 5, 458756, 851968, 6, 524292, 851968, 6, 524301, 851968, 6, 458765, 851968, 6, 393229, 851968, 5, 655359, 720896, 5, 589824, 720896, 5, 589825, 720896, 5, 589826, 720896, 5, 589827, 720896, 5, 589828, 720896, 5, 589829, 720896, 5, 589830, 720896, 5, 589831, 720896, 5, 589832, 720896, 5, 589833, 720896, 5, 589834, 720896, 5, 589835, 720896, 5, 589836, 720896, 5, 589837, 720896, 5, 589838, 720896, 5, 589839, 720896, 5, 589840, 720896, 5, 589841, 720896, 5, 589842, 720896, 5)
+layer_0/tile_data = PackedInt32Array(655360, 720896, 5, 655361, 720896, 5, 655362, 720896, 5, 655363, 720896, 5, 655364, 720896, 5, 655365, 720896, 5, 655366, 720896, 5, 655367, 720896, 5, 655368, 720896, 5, 655369, 720896, 5, 655370, 720896, 5, 655371, 720896, 5, 655372, 720896, 5, 655373, 720896, 5, 655374, 720896, 5, 655375, 720896, 5, 655376, 720896, 5, 655377, 720896, 5, 524288, 720896, 5, 524289, 720896, 5, 524290, 720896, 5, 524291, 720896, 5, 524292, 720896, 5, 524293, 720896, 5, 524294, 720896, 5, 524295, 720896, 5, 524296, 720896, 5, 524297, 720896, 5, 524298, 720896, 5, 524299, 720896, 5, 524300, 720896, 5, 524301, 720896, 5, 524302, 720896, 5, 524303, 720896, 5, 393233, 720896, 5, 393232, 720896, 5, 393231, 720896, 5, 393230, 720896, 5, 393229, 720896, 5, 393228, 720896, 5, 393227, 720896, 5, 393226, 720896, 5, 393225, 720896, 5, 393224, 720896, 5, 393223, 720896, 5, 393222, 720896, 5, 393221, 720896, 5, 393220, 720896, 5, 393219, 720896, 5, 393218, 720896, 5, 262144, 720896, 5, 262145, 720896, 5, 262146, 720896, 5, 262147, 720896, 5, 262148, 720896, 5, 262149, 720896, 5, 262150, 720896, 5, 262151, 720896, 5, 262152, 720896, 5, 262153, 720896, 5, 262154, 720896, 5, 262155, 720896, 5, 262156, 720896, 5, 262157, 720896, 5, 262158, 720896, 5, 262159, 720896, 5, 131089, 720896, 5, 131088, 720896, 5, 131087, 720896, 5, 131086, 720896, 5, 131085, 720896, 5, 131084, 720896, 5, 131083, 720896, 5, 131082, 720896, 5, 131081, 720896, 5, 131080, 720896, 5, 131079, 720896, 5, 131078, 720896, 5, 131077, 720896, 5, 131076, 720896, 5, 131075, 720896, 5, 131074, 720896, 5)
 
-[node name="Enemy" parent="." instance=ExtResource("4_4xbbr")]
-position = Vector2(18, 145)
+[node name="Player" parent="." instance=ExtResource("3_a5g8x")]
+position = Vector2(17, 156)
 
-[node name="Enemy 2" parent="." instance=ExtResource("5_iaj1q")]
-position = Vector2(272, 145)
+[node name="NextLevel" parent="." instance=ExtResource("4_dumvq")]
+position = Vector2(274, 33)
 
-[node name="Player" parent="." instance=ExtResource("6_ux7fy")]
-position = Vector2(147, 144)
+[node name="Key" parent="." instance=ExtResource("5_bhjjb")]
+position = Vector2(242, 24)
 
-[node name="Labels" type="Node" parent="."]
+[node name="Enemy" parent="." instance=ExtResource("6_4dral")]
+position = Vector2(73, 124)
 
-[node name="Label" type="Label" parent="Labels"]
-offset_left = 78.0
-offset_top = 16.0
-offset_right = 218.0
-offset_bottom = 51.0
-theme_override_fonts/font = ExtResource("7_wo14r")
-theme_override_font_sizes/font_size = 16
-text = "That's all there is so far lol. Thank you for playing"
-horizontal_alignment = 1
-autowrap_mode = 3
-clip_text = true
+[node name="Enemy 2" parent="." instance=ExtResource("7_leaj6")]
+position = Vector2(95, 124)
 
-[node name="Quit" type="Button" parent="."]
-offset_left = 106.0
-offset_top = 56.0
-offset_right = 185.0
-offset_bottom = 78.0
-theme_override_fonts/font = ExtResource("7_wo14r")
-theme_override_font_sizes/font_size = 16
-text = "Good Bye!"
+[node name="KillZone" parent="." instance=ExtResource("8_emo7j")]
+position = Vector2(139, 187)
 
-[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
+shape = SubResource("WorldBoundaryShape2D_56klp")
+
+[node name="Pause_screen" type="CanvasLayer" parent="."]
+
+[node name="Pause_menu" parent="Pause_screen" instance=ExtResource("9_4vvgi")]
+z_index = 100
