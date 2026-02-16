@@ -1,24 +1,24 @@
-[gd_scene load_steps=14 format=3 uid="uid://c3b2p61aklyet"]
+[gd_scene load_steps=14 format=3 uid="uid://ciakqu5mgske4"]
 
-[ext_resource type="Texture2D" uid="uid://bthiwsoqifa5x" path="res://Assets/Tilemap/monochrome_tilemap_transparent_packed.png" id="1_hubum"]
-[ext_resource type="PackedScene" uid="uid://d3jotadblnfxy" path="res://Scenes/player.tscn" id="2_qhxxe"]
-[ext_resource type="PackedScene" uid="uid://b8g8r84gyteaj" path="res://Scenes/gameplay/next_level.tscn" id="3_qhxxe"]
-[ext_resource type="PackedScene" uid="uid://bqff8g2jk1rvb" path="res://Scenes/gameplay/key.tscn" id="4_0h4al"]
-[ext_resource type="PackedScene" uid="uid://bllgx4qt8opkt" path="res://Scenes/enemy_2.tscn" id="5_gb6nk"]
-[ext_resource type="PackedScene" uid="uid://d2x55tqql4wb" path="res://Scenes/enemy.tscn" id="6_7se1c"]
-[ext_resource type="PackedScene" uid="uid://vhg73ttkkyt1" path="res://Scenes/kill_zone.tscn" id="7_ow8w2"]
+[ext_resource type="Texture2D" uid="uid://bthiwsoqifa5x" path="res://Assets/Tilemap/monochrome_tilemap_transparent_packed.png" id="1_0omm7"]
+[ext_resource type="PackedScene" uid="uid://d3jotadblnfxy" path="res://Scenes/player.tscn" id="2_88rf7"]
+[ext_resource type="PackedScene" uid="uid://b8g8r84gyteaj" path="res://Scenes/gameplay/next_level.tscn" id="3_deshb"]
+[ext_resource type="PackedScene" uid="uid://bqff8g2jk1rvb" path="res://Scenes/gameplay/key.tscn" id="4_v1oxq"]
+[ext_resource type="PackedScene" uid="uid://bllgx4qt8opkt" path="res://Scenes/enemy_2.tscn" id="5_nnumf"]
+[ext_resource type="PackedScene" uid="uid://d2x55tqql4wb" path="res://Scenes/enemy.tscn" id="6_6qxou"]
+[ext_resource type="PackedScene" uid="uid://vhg73ttkkyt1" path="res://Scenes/kill_zone.tscn" id="7_kuytm"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gb6nk"]
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_u4lgf"]
 normal = Vector2(1, 0)
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7se1c"]
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wr3ve"]
 normal = Vector2(0, 1)
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_nlhb4"]
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3cj6i"]
 normal = Vector2(-1, 0)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sydce"]
-texture = ExtResource("1_hubum")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4a00t"]
+texture = ExtResource("1_0omm7")
 1:0/0 = 0
 2:0/0 = 0
 3:0/0 = 0
@@ -577,13 +577,13 @@ texture = ExtResource("1_hubum")
 19:19/0 = 0
 19:19/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
-[sub_resource type="TileSet" id="TileSet_uhw5r"]
+[sub_resource type="TileSet" id="TileSet_63fij"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_sydce")
+sources/0 = SubResource("TileSetAtlasSource_4a00t")
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_aisj1"]
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_6a1eu"]
 
-[node name="level_7" type="Node2D"]
+[node name="level_8" type="Node2D"]
 
 [node name="Background" type="ColorRect" parent="."]
 offset_right = 292.0
@@ -599,48 +599,42 @@ zoom = Vector2(4, 4)
 [node name="StaticBody2D" type="StaticBody2D" parent="worldBorder"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="worldBorder/StaticBody2D"]
-shape = SubResource("WorldBoundaryShape2D_gb6nk")
+shape = SubResource("WorldBoundaryShape2D_u4lgf")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="worldBorder"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="worldBorder/StaticBody2D2"]
-shape = SubResource("WorldBoundaryShape2D_7se1c")
+shape = SubResource("WorldBoundaryShape2D_wr3ve")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="worldBorder"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="worldBorder/StaticBody2D3"]
 position = Vector2(288, 0)
-shape = SubResource("WorldBoundaryShape2D_nlhb4")
+shape = SubResource("WorldBoundaryShape2D_3cj6i")
 
 [node name="Environment" type="TileMap" parent="."]
 z_index = 1
-tile_set = SubResource("TileSet_uhw5r")
+tile_set = SubResource("TileSet_63fij")
 format = 2
-layer_0/tile_data = PackedInt32Array(524290, 655360, 5, 524291, 720896, 5, 524292, 720896, 5, 524302, 720896, 5, 524303, 720896, 5, 524304, 720896, 5, 524305, 720896, 5, 458757, 655360, 5, 393222, 655360, 5, 393223, 720896, 5, 393224, 720896, 5, 393225, 786432, 5, 458762, 786432, 5, 524299, 720896, 5, 524300, 720896, 5, 524301, 720896, 5, 196608, 720896, 8, 196609, 720896, 8, 196610, 720896, 8, 196611, 720896, 8, 196612, 786432, 8, 262155, 655360, 8, 262156, 720896, 8, 196621, 655360, 5, 196622, 720896, 5, 131087, 655360, 5, 131088, 720896, 5, 65553, 655360, 5, 262157, 720896, 7, 262158, 720896, 7, 262159, 720896, 7, 262160, 720896, 7, 262161, 720896, 7, 196615, 196608, 4, 196616, 196608, 4, 589826, 655360, 6, 655362, 655360, 6)
+layer_0/tile_data = PackedInt32Array(7, 851968, 6, 65543, 851968, 6, 131079, 655360, 7, 131080, 720896, 8, 131081, 786432, 8, 393223, 262144, 4, 393224, 327680, 4, 393225, 393216, 4, 262144, 720896, 8, 262145, 720896, 8, 262146, 786432, 7, 196610, 851968, 6, 131074, 851968, 5, 262149, 196608, 4, 589824, 720896, 5, 589825, 720896, 5, 589826, 720896, 5, 589827, 720896, 5, 589828, 720896, 5, 589829, 720896, 5, 589834, 655360, 5, 589835, 720896, 5, 589836, 720896, 5, 589837, 720896, 5, 589838, 720896, 5, 589839, 720896, 5, 589840, 720896, 5, 589841, 720896, 5, 589830, 786432, 5, 655366, 786432, 6, 655370, 655360, 6, 196625, 720896, 8, 196624, 720896, 8, 196623, 655360, 5, 262159, 851968, 6, 327695, 851968, 7, 327692, 196608, 4, 327688, 917504, 2)
 
-[node name="Player" parent="." instance=ExtResource("2_qhxxe")]
-position = Vector2(68, 126)
+[node name="Player" parent="." instance=ExtResource("2_88rf7")]
+position = Vector2(141, 30)
 
-[node name="NextLevel" parent="." instance=ExtResource("3_qhxxe")]
-position = Vector2(268, 128)
+[node name="NextLevel" parent="." instance=ExtResource("3_deshb")]
+position = Vector2(265, 49)
 
-[node name="Key" parent="." instance=ExtResource("4_0h4al")]
-position = Vector2(31, 38)
+[node name="Key" parent="." instance=ExtResource("4_v1oxq")]
+position = Vector2(17, 46)
 
-[node name="Enemy 2" parent="." instance=ExtResource("5_gb6nk")]
-position = Vector2(242, 126)
+[node name="Enemy 2" parent="." instance=ExtResource("5_nnumf")]
+position = Vector2(16, 63)
 
-[node name="Enemy 3" parent="." instance=ExtResource("5_gb6nk")]
-position = Vector2(60, 45)
+[node name="Enemy" parent="." instance=ExtResource("6_6qxou")]
+position = Vector2(273, 142)
 
-[node name="Enemy" parent="." instance=ExtResource("6_7se1c")]
-position = Vector2(128, 94)
-
-[node name="Enemy2" parent="." instance=ExtResource("6_7se1c")]
-position = Vector2(222, 47)
-
-[node name="KillZone" parent="." instance=ExtResource("7_ow8w2")]
+[node name="KillZone" parent="." instance=ExtResource("7_kuytm")]
 position = Vector2(139, 187)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
-shape = SubResource("WorldBoundaryShape2D_aisj1")
+shape = SubResource("WorldBoundaryShape2D_6a1eu")
