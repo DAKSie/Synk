@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://bxvuqrjy0yc2o"]
+[gd_scene load_steps=14 format=3 uid="uid://bxvuqrjy0yc2o"]
 
 [ext_resource type="PackedScene" uid="uid://bxknisnpioayj" path="res://Scenes/UI/pause_menu.tscn" id="2_oxtm3"]
 [ext_resource type="PackedScene" uid="uid://vhg73ttkkyt1" path="res://Scenes/kill_zone.tscn" id="3_1rs5u"]
 [ext_resource type="Texture2D" uid="uid://bthiwsoqifa5x" path="res://Assets/Tilemap/monochrome_tilemap_transparent_packed.png" id="3_8sjl4"]
 [ext_resource type="PackedScene" uid="uid://b8g8r84gyteaj" path="res://Scenes/gameplay/next_level.tscn" id="4_4lcd7"]
+[ext_resource type="PackedScene" uid="uid://d3jotadblnfxy" path="res://Scenes/player.tscn" id="6_ux7fy"]
 [ext_resource type="PackedScene" uid="uid://bqff8g2jk1rvb" path="res://Scenes/gameplay/key.tscn" id="7_aokn0"]
 [ext_resource type="PackedScene" uid="uid://c82466qfd02xx" path="res://Scenes/Guard.tscn" id="8_637ar"]
 
@@ -656,3 +657,6 @@ position = Vector2(153, 40)
 
 [node name="NextLevel" parent="." instance=ExtResource("4_4lcd7")]
 position = Vector2(9, 112)
+
+[node name="Player" parent="." instance=ExtResource("6_ux7fy")]
+position = Vector2(14, 160)
