@@ -1,24 +1,23 @@
-[gd_scene load_steps=14 format=3 uid="uid://cp1fmbdr74ed7"]
+[gd_scene load_steps=12 format=3 uid="uid://cmtxa61rrwjn2"]
 
-[ext_resource type="Texture2D" uid="uid://bthiwsoqifa5x" path="res://Assets/Tilemap/monochrome_tilemap_transparent_packed.png" id="1_wyulo"]
-[ext_resource type="PackedScene" uid="uid://d3jotadblnfxy" path="res://Scenes/player.tscn" id="2_vqdwi"]
-[ext_resource type="PackedScene" uid="uid://b8g8r84gyteaj" path="res://Scenes/gameplay/next_level.tscn" id="3_q6nfd"]
-[ext_resource type="PackedScene" uid="uid://bqff8g2jk1rvb" path="res://Scenes/gameplay/key.tscn" id="4_2ergn"]
-[ext_resource type="PackedScene" uid="uid://bllgx4qt8opkt" path="res://Scenes/enemy_2.tscn" id="5_msvyy"]
-[ext_resource type="PackedScene" uid="uid://d2x55tqql4wb" path="res://Scenes/enemy.tscn" id="6_8louo"]
-[ext_resource type="PackedScene" uid="uid://vhg73ttkkyt1" path="res://Scenes/kill_zone.tscn" id="7_h2ehd"]
+[ext_resource type="Texture2D" uid="uid://bthiwsoqifa5x" path="res://Assets/Tilemap/monochrome_tilemap_transparent_packed.png" id="1_hubum"]
+[ext_resource type="Script" uid="uid://deio7j6dqa0xu" path="res://Scripts/Levels/level_7.gd" id="1_qhxxe"]
+[ext_resource type="PackedScene" uid="uid://d3jotadblnfxy" path="res://Scenes/player.tscn" id="2_qhxxe"]
+[ext_resource type="FontFile" uid="uid://buchijmd1hyyk" path="res://Assets/Fonts/Ithaca-LVB75.ttf" id="5_dbpl7"]
+[ext_resource type="PackedScene" uid="uid://bllgx4qt8opkt" path="res://Scenes/enemy_2.tscn" id="5_gb6nk"]
+[ext_resource type="PackedScene" uid="uid://d2x55tqql4wb" path="res://Scenes/enemy.tscn" id="6_7se1c"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7dbso"]
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_nlhb4"]
 normal = Vector2(1, 0)
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1xidw"]
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_sydce"]
 normal = Vector2(0, 1)
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_470gl"]
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uhw5r"]
 normal = Vector2(-1, 0)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c368q"]
-texture = ExtResource("1_wyulo")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aisj1"]
+texture = ExtResource("1_hubum")
 1:0/0 = 0
 2:0/0 = 0
 3:0/0 = 0
@@ -228,6 +227,8 @@ texture = ExtResource("1_wyulo")
 9:7/0 = 0
 10:7/0 = 0
 10:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+11:7/0 = 0
+11:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 12:7/0 = 0
 12:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 13:7/0 = 0
@@ -254,6 +255,8 @@ texture = ExtResource("1_wyulo")
 9:8/0 = 0
 10:8/0 = 0
 10:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+11:8/0 = 0
+11:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 12:8/0 = 0
 12:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 13:8/0 = 0
@@ -572,18 +575,13 @@ texture = ExtResource("1_wyulo")
 18:19/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 19:19/0 = 0
 19:19/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-11:7/0 = 0
-11:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-11:8/0 = 0
-11:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
-[sub_resource type="TileSet" id="TileSet_kry1f"]
+[sub_resource type="TileSet" id="TileSet_vvdlf"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_c368q")
+sources/0 = SubResource("TileSetAtlasSource_aisj1")
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fj478"]
-
-[node name="level_9" type="Node2D"]
+[node name="Level 7" type="Node2D"]
+script = ExtResource("1_qhxxe")
 
 [node name="Background" type="ColorRect" parent="."]
 offset_right = 292.0
@@ -599,42 +597,55 @@ zoom = Vector2(4, 4)
 [node name="StaticBody2D" type="StaticBody2D" parent="worldBorder"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="worldBorder/StaticBody2D"]
-shape = SubResource("WorldBoundaryShape2D_7dbso")
+shape = SubResource("WorldBoundaryShape2D_nlhb4")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="worldBorder"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="worldBorder/StaticBody2D2"]
-shape = SubResource("WorldBoundaryShape2D_1xidw")
+shape = SubResource("WorldBoundaryShape2D_sydce")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="worldBorder"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="worldBorder/StaticBody2D3"]
 position = Vector2(288, 0)
-shape = SubResource("WorldBoundaryShape2D_470gl")
+shape = SubResource("WorldBoundaryShape2D_uhw5r")
 
 [node name="Environment" type="TileMap" parent="."]
 z_index = 1
-tile_set = SubResource("TileSet_kry1f")
+tile_set = SubResource("TileSet_vvdlf")
 format = 2
-layer_0/tile_data = PackedInt32Array(262156, 196608, 4, 262147, 196608, 4, 589829, 196608, 4, 524301, 196608, 4, 131087, 196608, 4, 458754, 196608, 4, 131074, 196608, 4, 65548, 196608, 4, 393232, 196608, 4, 589841, 196608, 4, 589824, 196608, 4, 327680, 196608, 4, 65541, 196608, 4, 196615, 196608, 4, 131082, 196608, 4, 589834, 196608, 4, 393227, 196608, 4, 524296, 196608, 4, 393222, 196608, 4)
+layer_0/tile_data = PackedInt32Array(589824, 720896, 5, 589825, 720896, 5, 589826, 720896, 5, 589827, 720896, 5, 589828, 720896, 5, 589829, 720896, 5, 589830, 720896, 5, 589831, 720896, 5, 589832, 720896, 5, 589833, 720896, 5, 589834, 720896, 5, 589835, 720896, 5, 589836, 720896, 5, 589837, 720896, 5, 589838, 720896, 5, 589839, 720896, 5, 589840, 720896, 5, 589841, 720896, 5, 655359, 720896, 5, 589842, 720896, 5, 393220, 851968, 5, 393229, 851968, 5, 458765, 851968, 6, 524301, 851968, 6, 458756, 851968, 6, 524292, 851968, 6)
 
-[node name="Player" parent="." instance=ExtResource("2_vqdwi")]
-position = Vector2(136, 125)
+[node name="Enemy" parent="." instance=ExtResource("6_7se1c")]
+position = Vector2(18, 145)
 
-[node name="NextLevel" parent="." instance=ExtResource("3_q6nfd")]
-position = Vector2(40, 33)
+[node name="Enemy 2" parent="." instance=ExtResource("5_gb6nk")]
+position = Vector2(272, 145)
 
-[node name="Key" parent="." instance=ExtResource("4_2ergn")]
-position = Vector2(248, 28)
+[node name="Player" parent="." instance=ExtResource("2_qhxxe")]
+position = Vector2(147, 144)
 
-[node name="Enemy 2" parent="." instance=ExtResource("5_msvyy")]
-position = Vector2(56, 63)
+[node name="Labels" type="Node" parent="."]
 
-[node name="Enemy" parent="." instance=ExtResource("6_8louo")]
-position = Vector2(200, 16)
+[node name="Label" type="Label" parent="Labels"]
+offset_left = 78.0
+offset_top = 16.0
+offset_right = 218.0
+offset_bottom = 51.0
+theme_override_fonts/font = ExtResource("5_dbpl7")
+theme_override_font_sizes/font_size = 16
+text = "That's all there is so far lol. Thank you for playing"
+horizontal_alignment = 1
+autowrap_mode = 3
+clip_text = true
 
-[node name="KillZone" parent="." instance=ExtResource("7_h2ehd")]
-position = Vector2(139, 187)
+[node name="Quit" type="Button" parent="."]
+offset_left = 106.0
+offset_top = 56.0
+offset_right = 185.0
+offset_bottom = 78.0
+theme_override_fonts/font = ExtResource("5_dbpl7")
+theme_override_font_sizes/font_size = 16
+text = "Good Bye!"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
-shape = SubResource("WorldBoundaryShape2D_fj478")
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
