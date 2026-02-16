@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cw4rfermeikog"]
+[gd_scene load_steps=16 format=3 uid="uid://cw4rfermeikog"]
 
 [ext_resource type="PackedScene" uid="uid://bxknisnpioayj" path="res://Scenes/UI/pause_menu.tscn" id="1_1upp7"]
 [ext_resource type="Texture2D" uid="uid://bthiwsoqifa5x" path="res://Assets/Tilemap/monochrome_tilemap_transparent_packed.png" id="2_b1emg"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bllgx4qt8opkt" path="res://Scenes/enemy_2.tscn" id="6_r0v0c"]
 [ext_resource type="PackedScene" uid="uid://d2x55tqql4wb" path="res://Scenes/enemy.tscn" id="7_u2s8n"]
 [ext_resource type="PackedScene" uid="uid://vhg73ttkkyt1" path="res://Scenes/kill_zone.tscn" id="8_ktaql"]
+[ext_resource type="PackedScene" uid="uid://c82466qfd02xx" path="res://Scenes/Guard.tscn" id="9_b1emg"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_00o8d"]
 normal = Vector2(1, 0)
@@ -640,9 +641,6 @@ position = Vector2(88, 144)
 [node name="Enemy" parent="." instance=ExtResource("7_u2s8n")]
 position = Vector2(185, 145)
 
-[node name="Enemy 2" parent="." instance=ExtResource("6_r0v0c")]
-position = Vector2(88, 145)
-
 [node name="Enemy 3" parent="." instance=ExtResource("6_r0v0c")]
 position = Vector2(200, 80)
 
@@ -654,3 +652,6 @@ position = Vector2(294, 112)
 
 [node name="Player2" parent="." instance=ExtResource("3_e83tn")]
 position = Vector2(25, 112)
+
+[node name="Enemy 2" parent="." instance=ExtResource("9_b1emg")]
+position = Vector2(88, 145)
