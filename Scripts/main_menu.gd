@@ -39,7 +39,7 @@ func _on_timer_timeout() -> void:
 	if button_type == "start":
 		if MusicManager.has_method("stop_main_menu_music"):
 			MusicManager.stop_main_menu_music()
-		get_tree().change_scene_to_file("res://Scenes/Levels/level_10.tscn")
+		get_tree().change_scene_to_file("res://Scenes/Levels/level_1.tscn")
 	elif button_type == "options":
 		get_tree().change_scene_to_file("res://Scenes/option_menu.tscn")
 	elif button_type == "quit":

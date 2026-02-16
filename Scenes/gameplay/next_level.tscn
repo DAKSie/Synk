@@ -102,7 +102,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_08nvk"]
-size = Vector2(12, 24)
+size = Vector2(2, 1)
 
 [sub_resource type="Animation" id="Animation_8tnjg"]
 length = 0.001
@@ -166,7 +166,7 @@ animation = &"close"
 autoplay = "close"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -12)
+position = Vector2(0, -2.5)
 shape = SubResource("RectangleShape2D_08nvk")
 
 [node name="level_fade" type="ColorRect" parent="."]
