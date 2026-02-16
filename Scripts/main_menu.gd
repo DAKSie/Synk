@@ -7,6 +7,7 @@ var button_type = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	MusicManager.stop_level_music()
 	fade_in_out.show()
 	animation_player.play("fade_out")
 	MusicManager.play_main_menu_music()
@@ -34,10 +35,11 @@ func _on_quit_pressed() -> void:
 	animation_player.play("fade_in")
 
 func _on_timer_timeout() -> void:
+	fade_in_out.hide()
 	if button_type == "start":
 		if MusicManager.has_method("stop_main_menu_music"):
 			MusicManager.stop_main_menu_music()
-		get_tree().change_scene_to_file("res://Scenes/Levels/level_1.tscn")
+		get_tree().change_scene_to_file("res://Scenes/Levels/level_10.tscn")
 	elif button_type == "options":
 		get_tree().change_scene_to_file("res://Scenes/option_menu.tscn")
 	elif button_type == "quit":
