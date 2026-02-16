@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ckof83h5udfqy"]
+[gd_scene load_steps=16 format=3 uid="uid://ckof83h5udfqy"]
 
 [ext_resource type="PackedScene" uid="uid://bxknisnpioayj" path="res://Scenes/UI/pause_menu.tscn" id="1_51crm"]
 [ext_resource type="Texture2D" uid="uid://bthiwsoqifa5x" path="res://Assets/Tilemap/monochrome_tilemap_transparent_packed.png" id="2_2ykwf"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bqff8g2jk1rvb" path="res://Scenes/gameplay/key.tscn" id="5_3hkhy"]
 [ext_resource type="PackedScene" uid="uid://bllgx4qt8opkt" path="res://Scenes/enemy_2.tscn" id="6_7h0bj"]
 [ext_resource type="PackedScene" uid="uid://d2x55tqql4wb" path="res://Scenes/enemy.tscn" id="7_l8ao4"]
+[ext_resource type="PackedScene" uid="uid://c82466qfd02xx" path="res://Scenes/Guard.tscn" id="8_51crm"]
 [ext_resource type="PackedScene" uid="uid://vhg73ttkkyt1" path="res://Scenes/kill_zone.tscn" id="8_f23aw"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_00o8d"]
@@ -17,6 +18,7 @@ normal = Vector2(0, 1)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_xab48"]
 normal = Vector2(-1, 0)
+distance = 1.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qoxtb"]
 texture = ExtResource("2_2ykwf")
@@ -592,13 +594,13 @@ sources/0 = SubResource("TileSetAtlasSource_qoxtb")
 z_index = 100
 
 [node name="Background" type="ColorRect" parent="."]
-offset_right = 292.0
-offset_bottom = 165.0
+offset_right = 304.0
+offset_bottom = 170.0
 color = Color(0, 0, 0, 1)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
-zoom = Vector2(4, 4)
+zoom = Vector2(3.79, 3.79)
 
 [node name="worldBorder" type="Node" parent="."]
 
@@ -615,32 +617,38 @@ shape = SubResource("WorldBoundaryShape2D_2khew")
 [node name="StaticBody2D3" type="StaticBody2D" parent="worldBorder"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="worldBorder/StaticBody2D3"]
-position = Vector2(288, 0)
+position = Vector2(305, 0)
 shape = SubResource("WorldBoundaryShape2D_xab48")
 
 [node name="Environment" type="TileMap" parent="."]
 z_index = 1
 tile_set = SubResource("TileSet_a2hlh")
 format = 2
-layer_0/tile_data = PackedInt32Array(524291, 720896, 8, 524290, 720896, 8, 524289, 720896, 8, 524288, 720896, 8, 524301, 655360, 5, 524302, 720896, 5, 524303, 720896, 5, 524304, 720896, 5, 524305, 720896, 5, 524306, 720896, 5, 589823, 720896, 8, 589837, 655360, 6, 655373, 655360, 6, 393223, 851968, 5, 393226, 1179648, 9, 458759, 851968, 6, 458762, 1179648, 10, 655370, 1179648, 10, 589834, 1179648, 10, 524298, 1179648, 10, 655368, 1048576, 9, 655369, 1048576, 9, 655367, 1048576, 9, 655366, 1048576, 9, 655365, 1048576, 9, 655364, 1048576, 9, 524292, 720896, 5, 524293, 720896, 5, 524294, 720896, 5, 524295, 851968, 7, 589827, 786432, 6, 655363, 786432, 6, 524297, 196608, 4)
-
-[node name="Player" parent="." instance=ExtResource("3_p7cy0")]
-position = Vector2(9, 128)
-
-[node name="NextLevel" parent="." instance=ExtResource("4_stmky")]
-position = Vector2(280, 128)
-
-[node name="Key" parent="." instance=ExtResource("5_3hkhy")]
-position = Vector2(74, 154)
-
-[node name="Enemy 2" parent="." instance=ExtResource("6_7h0bj")]
-position = Vector2(110, 161)
-
-[node name="Enemy" parent="." instance=ExtResource("7_l8ao4")]
-position = Vector2(120, 97)
+layer_0/tile_data = PackedInt32Array(196616, 655360, 8, 196617, 720896, 8, 196618, 786432, 8, 65544, 655360, 8, 65545, 720896, 8, 65546, 786432, 8, 327688, 655360, 5, 327689, 720896, 8, 327690, 786432, 8, 393220, 655360, 8, 393221, 720896, 8, 393222, 786432, 8, 393228, 655360, 8, 393229, 720896, 8, 393230, 786432, 8, 262156, 655360, 8, 262157, 720896, 8, 262158, 786432, 8, 262148, 655360, 8, 262149, 720896, 8, 262150, 786432, 8, 131076, 655360, 8, 131077, 720896, 8, 131078, 786432, 8, 131084, 655360, 8, 131085, 720896, 8, 131086, 786432, 8, 524296, 851968, 6, 589832, 851968, 6, 655368, 655360, 7, 524298, 851968, 6, 589834, 851968, 6, 655370, 786432, 7, 458760, 851968, 6, 655369, 720896, 8, 458762, 851968, 5, 393224, 851968, 6)
 
 [node name="KillZone" parent="." instance=ExtResource("8_f23aw")]
 position = Vector2(139, 187)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
 shape = SubResource("WorldBoundaryShape2D_5l77v")
+
+[node name="NextLevel" parent="." instance=ExtResource("4_stmky")]
+position = Vector2(152, 160)
+
+[node name="Key" parent="." instance=ExtResource("5_3hkhy")]
+position = Vector2(152, 42)
+
+[node name="Enemy" parent="." instance=ExtResource("7_l8ao4")]
+position = Vector2(87, 65)
+
+[node name="Enemy 2" parent="." instance=ExtResource("6_7h0bj")]
+position = Vector2(217, 65)
+
+[node name="Enemy 3" parent="." instance=ExtResource("8_51crm")]
+position = Vector2(152, 49)
+
+[node name="Enemy 4" parent="." instance=ExtResource("8_51crm")]
+position = Vector2(168, 113)
+
+[node name="Player" parent="." instance=ExtResource("3_p7cy0")]
+position = Vector2(152, 16)
