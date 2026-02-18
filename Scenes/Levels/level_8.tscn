@@ -619,7 +619,7 @@ format = 2
 layer_0/tile_data = PackedInt32Array(7, 851968, 6, 65543, 851968, 6, 131079, 655360, 7, 131080, 720896, 8, 131081, 786432, 8, 393223, 262144, 4, 393224, 327680, 4, 393225, 393216, 4, 262144, 720896, 8, 262145, 720896, 8, 262146, 786432, 7, 196610, 851968, 6, 131074, 851968, 5, 262149, 196608, 4, 589824, 720896, 5, 589825, 720896, 5, 589826, 720896, 5, 589827, 720896, 5, 589828, 720896, 5, 589829, 720896, 5, 589834, 655360, 5, 589835, 720896, 5, 589836, 720896, 5, 589837, 720896, 5, 589838, 720896, 5, 589839, 720896, 5, 589840, 720896, 5, 589841, 720896, 5, 589830, 786432, 5, 655366, 786432, 6, 655370, 655360, 6, 196625, 720896, 8, 196624, 720896, 8, 196623, 655360, 5, 262159, 851968, 6, 327695, 851968, 7, 327692, 196608, 4, 327688, 917504, 2)
 
 [node name="Player" parent="." instance=ExtResource("2_88rf7")]
-position = Vector2(141, 30)
+position = Vector2(151, 30)
 
 [node name="NextLevel" parent="." instance=ExtResource("3_deshb")]
 position = Vector2(265, 49)
@@ -630,8 +630,14 @@ position = Vector2(17, 46)
 [node name="Enemy 2" parent="." instance=ExtResource("5_nnumf")]
 position = Vector2(16, 63)
 
+[node name="Enemy 3" parent="." instance=ExtResource("5_nnumf")]
+position = Vector2(248, 46)
+
 [node name="Enemy" parent="." instance=ExtResource("6_6qxou")]
 position = Vector2(273, 142)
+
+[node name="Enemy2" parent="." instance=ExtResource("6_6qxou")]
+position = Vector2(136, 31)
 
 [node name="KillZone" parent="." instance=ExtResource("7_kuytm")]
 position = Vector2(139, 187)
