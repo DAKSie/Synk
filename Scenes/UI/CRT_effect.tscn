@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://3dbdybcogbgr"]
+
+[ext_resource type="Script" uid="uid://bvhhlfsuobolb" path="res://Scripts/crt_effect.gd" id="1_76cbo"]
+[ext_resource type="Shader" uid="uid://b7r2i4r3p1o7w" path="res://Shaders/CRT_effect.gdshader" id="2_4up1g"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b6n0y"]
+shader = ExtResource("2_4up1g")
+shader_parameter/screen_size = Vector2(0, 0)
+shader_parameter/curvature = 7.0
+shader_parameter/scanline_intensity = 0.15
+shader_parameter/scanline_density = 2.0
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_roundness = 1.0
+shader_parameter/color_bleed = 0.1
+shader_parameter/brightness = 1.1
+shader_parameter/contrast = 1.05
+shader_parameter/saturation = 1.1
+shader_parameter/glow_intensity = 0.3
+shader_parameter/rgb_shift = 0.001
+
+[sub_resource type="QuadMesh" id="QuadMesh_4up1g"]
+
+[node name="CrtEffect" type="Node2D"]
+script = ExtResource("1_76cbo")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_b6n0y")
+position = Vector2(576, 320)
+mesh = SubResource("QuadMesh_4up1g")

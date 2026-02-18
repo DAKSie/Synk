@@ -3,6 +3,8 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	MusicManager.stop_all_music()
+	MusicManager.play_level_music()
 	pass # Replace with function body.
 
 
