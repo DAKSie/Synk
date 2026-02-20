@@ -1,13 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://c3b2p61aklyet"]
+[gd_scene load_steps=15 format=3 uid="uid://c3b2p61aklyet"]
 
 [ext_resource type="Texture2D" uid="uid://bthiwsoqifa5x" path="res://Assets/Tilemap/monochrome_tilemap_transparent_packed.png" id="1_hubum"]
 [ext_resource type="PackedScene" uid="uid://d3jotadblnfxy" path="res://Scenes/player.tscn" id="2_qhxxe"]
 [ext_resource type="PackedScene" uid="uid://b8g8r84gyteaj" path="res://Scenes/gameplay/next_level.tscn" id="3_qhxxe"]
-[ext_resource type="PackedScene" uid="uid://bqff8g2jk1rvb" path="res://Scenes/gameplay/key.tscn" id="4_0h4al"]
 [ext_resource type="PackedScene" uid="uid://bllgx4qt8opkt" path="res://Scenes/enemy_2.tscn" id="5_gb6nk"]
 [ext_resource type="PackedScene" uid="uid://bqff8g2jk1rvb" path="res://Scenes/gameplay/key.tscn" id="5_ow8w2"]
 [ext_resource type="PackedScene" uid="uid://d2x55tqql4wb" path="res://Scenes/enemy.tscn" id="6_7se1c"]
 [ext_resource type="PackedScene" uid="uid://vhg73ttkkyt1" path="res://Scenes/kill_zone.tscn" id="7_ow8w2"]
+[ext_resource type="PackedScene" uid="uid://bxknisnpioayj" path="res://Scenes/UI/pause_menu.tscn" id="8_0h4al"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gb6nk"]
 normal = Vector2(1, 0)
@@ -625,7 +625,7 @@ position = Vector2(68, 126)
 [node name="NextLevel" parent="." instance=ExtResource("3_qhxxe")]
 position = Vector2(268, 128)
 
-[node name="Key" parent="." instance=ExtResource("4_0h4al")]
+[node name="Key" parent="." instance=ExtResource("5_ow8w2")]
 position = Vector2(31, 38)
 
 [node name="Enemy 2" parent="." instance=ExtResource("5_gb6nk")]
@@ -645,3 +645,8 @@ position = Vector2(139, 187)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
 shape = SubResource("WorldBoundaryShape2D_aisj1")
+
+[node name="Pause_screen" type="CanvasLayer" parent="."]
+
+[node name="Pause_menu" parent="Pause_screen" instance=ExtResource("8_0h4al")]
+z_index = 100

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ciakqu5mgske4"]
+[gd_scene load_steps=15 format=3 uid="uid://ciakqu5mgske4"]
 
 [ext_resource type="Texture2D" uid="uid://bthiwsoqifa5x" path="res://Assets/Tilemap/monochrome_tilemap_transparent_packed.png" id="1_0omm7"]
 [ext_resource type="PackedScene" uid="uid://d3jotadblnfxy" path="res://Scenes/player.tscn" id="2_88rf7"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bllgx4qt8opkt" path="res://Scenes/enemy_2.tscn" id="5_nnumf"]
 [ext_resource type="PackedScene" uid="uid://d2x55tqql4wb" path="res://Scenes/enemy.tscn" id="6_6qxou"]
 [ext_resource type="PackedScene" uid="uid://vhg73ttkkyt1" path="res://Scenes/kill_zone.tscn" id="7_kuytm"]
+[ext_resource type="PackedScene" uid="uid://bxknisnpioayj" path="res://Scenes/UI/pause_menu.tscn" id="8_88rf7"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_u4lgf"]
 normal = Vector2(1, 0)
@@ -644,3 +645,8 @@ position = Vector2(139, 187)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
 shape = SubResource("WorldBoundaryShape2D_6a1eu")
+
+[node name="Pause_screen" type="CanvasLayer" parent="."]
+
+[node name="Pause_menu" parent="Pause_screen" instance=ExtResource("8_88rf7")]
+z_index = 100
